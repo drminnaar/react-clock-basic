@@ -30,6 +30,7 @@ This project also demonstrates:
 * [react-clock-basic]
 * [react-timer-basic]
 * [react-timer-advanced]
+* [react-masterminds]
 
 ---
 
@@ -144,3 +145,4 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 [react-clock-basic]: https://github.com/drminnaar/react-clock-basic
 [react-timer-basic]: https://github.com/drminnaar/react-timer-basic
 [react-timer-advanced]: https://github.com/drminnaar/react-timer-advanced
+[react-masterminds]: https://github.com/drminnaar/react-masterminds
