@@ -1,0 +1,28 @@
+$display-background-color: #282C34;
+$display-border-color: #32363E;
+$display-color: #61DAFB;
+
+.display {
+    align-items: center;
+    background-color: $display-background-color;
+    border: 1rem solid $display-border-color;
+    border-radius: 50%;    
+    display: flex;
+    flex-direction: column;
+    height: 14rem;
+    justify-content: center;
+    margin: 1rem auto;    
+    width: 14rem;
+}
+
+.display-date {
+    color: $display-color;
+    font-size: 14px;
+    font-weight: 300;    
+}
+
+.display-time {
+    color: $display-color;
+    font-size: 42px;
+    font-weight: 600;
+}
