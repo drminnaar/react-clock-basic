@@ -10,6 +10,10 @@ This project also demonstrates:
 * eslint setup and configuration
 * SCSS setup and configuration
 
+**Screenshots:**
+
+|![react-clock-basic-1](https://user-images.githubusercontent.com/33935506/33753477-2fa5b182-dbf0-11e7-8608-c69a8739b09e.PNG)|![react-clock-basic-2](https://user-images.githubusercontent.com/33935506/33753478-2fd901ae-dbf0-11e7-8d7f-c9ee49145c04.PNG)
+
 ---
 
 ## Developed With
@@ -26,11 +30,28 @@ This project also demonstrates:
 ## Related Projects
 
 * [react-starter]
+
+  A basic template that consists of the essential elements that are required to start building a React application
+
 * [react-clicker]
-* [react-clock-basic]
+
+  A basic React app that allows one to increase, decrease, or reset a counter
+
 * [react-timer-basic]
+
+  A basic timer that will start a countdown based on an input of time in seconds
+
 * [react-timer-advanced]
+
+   A basic countdown timer that offers an advanced UI experience
+
 * [react-masterminds]
+
+  A basic game of guessing a number with varying degrees of difficulty
+
+* [react-movie-cards]
+
+  A basic application that displays a list of movies as a list of cards
 
 ---
 
@@ -146,3 +167,4 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 [react-timer-basic]: https://github.com/drminnaar/react-timer-basic
 [react-timer-advanced]: https://github.com/drminnaar/react-timer-advanced
 [react-masterminds]: https://github.com/drminnaar/react-masterminds
+[react-movie-cards]: https://github.com/drminnaar/react-movie-cards.git
