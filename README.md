@@ -2,6 +2,9 @@
 
 A basic clock that displays the current date and time
 
+Component Diagram
+![](https://user-images.githubusercontent.com/33935506/34461456-35fcbde6-ee33-11e7-908e-bc7c74b8bbd2.png)
+
 This project also demonstrates:
 
 * a typcial React project layout structure
@@ -12,7 +15,9 @@ This project also demonstrates:
 
 **Screenshots:**
 
-|![react-clock-basic-1](https://user-images.githubusercontent.com/33935506/33753477-2fa5b182-dbf0-11e7-8608-c69a8739b09e.PNG)|![react-clock-basic-2](https://user-images.githubusercontent.com/33935506/33753478-2fd901ae-dbf0-11e7-8d7f-c9ee49145c04.PNG)
+... | ...
+--- | ---
+![](https://user-images.githubusercontent.com/33935506/33753477-2fa5b182-dbf0-11e7-8608-c69a8739b09e.PNG) | ![](https://user-images.githubusercontent.com/33935506/33753478-2fd901ae-dbf0-11e7-8d7f-c9ee49145c04.PNG)
 
 ---
 
@@ -52,6 +57,18 @@ This project also demonstrates:
 * [react-movie-cards]
 
   A basic application that displays a list of movies as a list of cards
+
+* [react-calculator-standard]
+
+  A calculator that provides the essential arithmetic operations, an expression builder, and a complete history of all expressions
+
+* [react-bitcoin-monitor]
+
+  An app that monitors changes in the Bitcoin Price Index (BPI)
+
+* [react-weather-standard]
+
+  A weather application that displays the current weather, daily forecasts, and hourly forecasts based on your current geolocation
 
 ---
 
@@ -167,4 +184,7 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 [react-timer-basic]: https://github.com/drminnaar/react-timer-basic
 [react-timer-advanced]: https://github.com/drminnaar/react-timer-advanced
 [react-masterminds]: https://github.com/drminnaar/react-masterminds
-[react-movie-cards]: https://github.com/drminnaar/react-movie-cards.git
+[react-movie-cards]: https://github.com/drminnaar/react-movie-cards
+[react-calculator-standard]: https://github.com/drminnaar/react-calculator-standard
+[react-bitcoin-monitor]: https://github.com/drminnaar/react-bitcoin-monitor
+[react-weather-standard]: https://github.com/drminnaar/react-weather-standard
