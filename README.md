@@ -2,6 +2,8 @@
 
 A basic clock that displays the current date and time
 
+Go **[here](http://react-clock-basic.drminnaar.me/)** for live demo.
+
 Component Diagram
 ![](https://user-images.githubusercontent.com/33935506/34461456-35fcbde6-ee33-11e7-908e-bc7c74b8bbd2.png)
 
@@ -29,6 +31,7 @@ This project also demonstrates:
 * [Webpack](https://webpack.js.org/) - A module bundler
 * [SCSS](http://sass-lang.com/) - A css metalanguage
 * [Bootstrap 4](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS
+* [Surge]: https://surge.sh/
 
 ---
 
