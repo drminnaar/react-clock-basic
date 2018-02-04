@@ -11,8 +11,8 @@ export default class DateTime {
         ];
     
         this.dayNames = [
-            'Monday', 'Tuesday', 'Wednesday',
-            'Thursday', 'Friday', 'Saturday', 'Sunday'
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday'
         ];
     }
 
@@ -29,7 +29,7 @@ export default class DateTime {
     }
 
     dayOfWeek() {
-        return this.dayNames[this.date.getDay() - 1];
+        return this.dayNames[this.date.getDay()];
     }
 
     dayOfMonth() {
