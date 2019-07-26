@@ -1,5 +1,7 @@
 # React Clock
 
+This is a fork of this clock app that includes deployments for Azure Kubernetes Service and Docker.
+
 A basic clock that displays the current date and time
 
 Go **[here](http://react-clock-basic.drminnaar.me/)** for live demo.

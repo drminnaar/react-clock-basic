@@ -11,7 +11,7 @@ describe('/', function () {
     });
   });
 
-  it('should say "Hello World!"', function (done) {
+  it('should say "React Clock"', function (done) {
     http.get('http://localhost:8080', function (res) {
       var data = '';
 
@@ -20,7 +20,7 @@ describe('/', function () {
       });
 
       res.on('end', function () {
-        assert.equal('Hello World!', data);
+        assert.equal('React Clock', data);
         done();
       });
     });
