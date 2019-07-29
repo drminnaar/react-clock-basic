@@ -10,7 +10,7 @@
     "serve": "webpack -d && live-server ./public",
     "serve:dev": "webpack-dev-server --open",
     "start": "npm run serve",
-    "test": "echo \"No tests available\" && exit 0"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.2.0",
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",
     "eslint": "^4.17.0",
@@ -38,6 +39,7 @@
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "live-server": "^1.2.0",
+    "mocha": "^6.2.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
