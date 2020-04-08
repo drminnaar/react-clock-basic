@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "liveontwitchaks"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "liveontwitchaks"
+    spec:
+      containers:
+        - name: "liveontwitchaks"
+          image: "jaygordonacr.azurecr.io/liveontwitchaks"
+          ports:
+          - containerPort: 8080
