@@ -1,0 +1,51 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: jaygordonacr.azurecr.io
+        username: ${{ secrets.acr_jaygordonacr_username }}
+        password: ${{ secrets.acr_jaygordonacr_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t jaygordonacr.azurecr.io/liveontwitchaks:${{ github.sha }}
+        docker push jaygordonacr.azurecr.io/liveontwitchaks:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_liveontwitchaks_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep liveontwitchaks1234 | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace liveontwitchaks1234`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: liveontwitchaks1234
+        container-registry-url: jaygordonacr.azurecr.io
+        container-registry-username: ${{ secrets.acr_jaygordonacr_username }}
+        container-registry-password: ${{ secrets.acr_jaygordonacr_password }}
+        secret-name: liveontwitchdockerauth
+       
+    - uses: azure/k8s-deploy@v1
+      with:
+        namespace: liveontwitchaks1234
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+          manifests/ingress.yml
+        images: |
+          jaygordonacr.azurecr.io/liveontwitchaks:${{ github.sha }}
+        imagepullsecrets: |
+          liveontwitchdockerauth
