@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "liveontwitchaks"
+    labels:
+        app: "liveontwitchaks"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: liveontwitchaks1234-liveontwitchaks.e15fe7cba5334e40a190.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "liveontwitchaks"
+                servicePort: 8080
