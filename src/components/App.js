@@ -8,7 +8,7 @@ export default class App extends Component {
         super();
 
         this.state = {
-            title: 'Jay's React Clock'
+            title: 'React Clock'
         };
     }
 
