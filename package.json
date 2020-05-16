@@ -9,8 +9,7 @@
     "lint:fix": "eslint . --fix",
     "serve": "webpack -d && live-server ./public",
     "serve:dev": "webpack-dev-server --open",
-    "start": "npm run serve",
-    "test": "mocha --exit"
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
