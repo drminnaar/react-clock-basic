@@ -109,7 +109,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 The following software is required to be installed on your system:
 
-* Node 8.x
+* Node 12.x
 * Npm 3.x
 
 Type the following commands in the terminal to verify your node and npm versions
