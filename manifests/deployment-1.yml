@@ -1,16 +1,33 @@
 apiVersion : apps/v1beta1
 kind: Deployment
 metadata:
-  name: "jayaks1"
+  name: react-clock-basic
 spec:
-  replicas: 2
+  selector:
+      matchLabels:
+        app: react-clock-basic
+  replicas: 3
   template:
-    metadata:
-      labels:
-        app: "jayaks1"
-    spec:
-      containers:
-        - name: "jayaks1"
+      metadata:
+        labels:
+            app: react-clock-basic
+      spec:
+        containers:
+        - name: react-clock-basic
           image: "jayacr001.azurecr.io/jayaks1"
-          ports:
-          - containerPort: 8080
+          imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
