@@ -1,19 +1,19 @@
 apiVersion : apps/v1beta1
 kind: Deployment
 metadata:
-  name: react-clock-basic
+  name: jayaks1
 spec:
   selector:
       matchLabels:
-        app: react-clock-basic
+        app: jayaks1
   replicas: 3
   template:
       metadata:
         labels:
-            app: react-clock-basic
+            app: jayaks1
       spec:
         containers:
-        - name: react-clock-basic
+        - name: jayaks1
           image: "jayacr001.azurecr.io/jayaks1"
           imagePullPolicy: Always
           readinessProbe:
