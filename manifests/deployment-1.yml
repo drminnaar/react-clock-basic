@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "jayaks1"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "jayaks1"
+    spec:
+      containers:
+        - name: "jayaks1"
+          image: "jayacr001.azurecr.io/jayaks1"
+          ports:
+          - containerPort: 8080
