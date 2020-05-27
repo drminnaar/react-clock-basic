@@ -1,15 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: "clockaks01"
-    labels:
-        app: "clockaks01"
+  name: clockaks01
 spec:
-    type: ClusterIP
-    ports:
-    - port: 8080
-      targetPort: 8080
-      protocol: TCP
-      name: http
-    selector:
-        app: "clockaks01"
+  type: LoadBalancer
+  selector:
+    app: clockaks01
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080

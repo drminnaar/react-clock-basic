@@ -1,16 +1,33 @@
-apiVersion : apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "clockaks01"
+  name: clockaks01
 spec:
-  replicas: 2
+  selector:
+      matchLabels:
+        app: clockaks01
+  replicas: 3
   template:
-    metadata:
-      labels:
-        app: "clockaks01"
-    spec:
-      containers:
-        - name: "clockaks01"
+      metadata:
+        labels:
+            app: clockaks01
+      spec:
+        containers:
+        - name: clockaks01
           image: "clockacr01.azurecr.io/clockaks01"
-          ports:
-          - containerPort: 8080
+          imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
