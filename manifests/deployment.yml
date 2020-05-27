@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "clockaks01"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "clockaks01"
+    spec:
+      containers:
+        - name: "clockaks01"
+          image: "clockacr01.azurecr.io/clockaks01"
+          ports:
+          - containerPort: 8080
