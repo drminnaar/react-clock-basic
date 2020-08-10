@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "jayaks2-c927"
+    labels:
+        app: "jayaks2-c927"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    selector:
+        app: "jayaks2-c927"
