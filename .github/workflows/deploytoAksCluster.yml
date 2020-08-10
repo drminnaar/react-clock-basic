@@ -42,9 +42,9 @@ jobs:
       with:
         namespace: jayaks210cf
         manifests: |
-          manifests/deployment-1.yml
-          manifests/service-1.yml
-          manifests/ingress-1.yml
+          manifests/deployment.yml
+          manifests/service.yml
+          manifests/ingress.yml
         images: |
           jayacr002.azurecr.io/jayaks2:${{ github.sha }}
         imagepullsecrets: |
