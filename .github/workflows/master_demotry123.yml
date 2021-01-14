@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'demotry123'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_64f678b792224858ad06c1ec81f48dc6 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2c6c758e207e47c7a7bcef6f6d8e6353 }}
         package: .
