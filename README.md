@@ -191,3 +191,7 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 [react-calculator-standard]: https://github.com/drminnaar/react-calculator-standard
 [react-bitcoin-monitor]: https://github.com/drminnaar/react-bitcoin-monitor
 [react-weather-standard]: https://github.com/drminnaar/react-weather-standard
+
+
+
+TESTING-----
