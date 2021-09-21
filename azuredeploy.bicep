@@ -1,4 +1,4 @@
-param webAppName string = uniqueString(resourceGroup().id) // Generate unique String for web app name
+param webAppName string = 'wtdx63txirdpdf' // Generate unique String for web app name
 param sku string = 'P1V2' // The SKU of App Service Plan
 param linuxFxVersion string = 'node|14-lts' // The runtime stack of web app
 param location string = resourceGroup().location // Location for all resources
