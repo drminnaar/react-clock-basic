@@ -7,25 +7,6 @@ terraform {
   }
 }
 
-resource "azurecaf_name" "container_registry" {
-  name          = var.application_name
-  resource_type = "azurerm_container_registry"
-  suffixes      = [var.environment]
-}
-
-resource "azurerm_container_registry" "container-registry" {
-  name                = azurecaf_name.container_registry.result
-  resource_group_name = var.resource_group
-  location            = var.location
-  admin_enabled       = true
-  sku                 = "Basic"
-
-  tags = {
-    "environment"      = var.environment
-    "application-name" = var.application_name
-  }
-}
-
 resource "azurecaf_name" "app_service_plan" {
   name            = var.application_name
   resource_type   = "azurerm_app_service_plan"
@@ -47,8 +28,8 @@ resource "azurerm_app_service_plan" "application" {
   }
 
   sku {
-    tier = "Free"
-    size = "F1"
+    tier = "Basic"
+    size = "B1"
   }
 }
 
@@ -72,21 +53,16 @@ resource "azurerm_app_service" "application" {
   }
 
   site_config {
-    linux_fx_version          = "DOCKER|${azurerm_container_registry.container-registry.name}.azurecr.io/${var.application_name}/${var.application_name}:latest"
-    always_on                 = false
-    use_32_bit_worker_process = true
-    ftps_state                = "FtpsOnly"
+    linux_fx_version = "NODE|14-lts"
+    app_command_line = "npm run start:prod"
+    always_on        = true
+    ftps_state       = "FtpsOnly"
   }
 
   app_settings = {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
-    "DOCKER_REGISTRY_SERVER_URL"          = "https://${azurerm_container_registry.container-registry.name}.azurecr.io"
-    "DOCKER_REGISTRY_SERVER_USERNAME"     = azurerm_container_registry.container-registry.admin_username
-    "DOCKER_REGISTRY_SERVER_PASSWORD"     = azurerm_container_registry.container-registry.admin_password
-    "WEBSITES_PORT"                       = "8080"
-
-    // Monitoring with Azure Application Insights
-    "APPINSIGHTS_INSTRUMENTATIONKEY" = var.azure_application_insights_instrumentation_key
+    "WEBSITE_RUN_FROM_PACKAGE"            = "1"
+    "WEBSITE_NODE_DEFAULT_VERSION"        = "~14"
 
     # These are app specific environment variables
   }

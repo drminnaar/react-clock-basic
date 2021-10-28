@@ -9,7 +9,6 @@ terraform {
       version = "1.2.6"
     }
   }
-  backend "azurerm" {}
 }
 
 provider "azurerm" {
@@ -35,9 +34,6 @@ resource "azurerm_resource_group" "main" {
     "terraform"        = "true"
     "environment"      = local.environment
     "application-name" = var.application_name
-
-    // Name of the Azure Storage Account that stores the Terraform state
-    "terraform_storage_account" = var.terraform_storage_account
   }
 }
 
@@ -47,14 +43,4 @@ module "application" {
   application_name = var.application_name
   environment      = local.environment
   location         = var.location
-
-  azure_application_insights_instrumentation_key = module.application-insights.azure_application_insights_instrumentation_key
-}
-
-module "application-insights" {
-  source            = "./modules/application-insights"
-  resource_group    = azurerm_resource_group.main.name
-  application_name  = var.application_name
-  environment       = local.environment
-  location          = var.location
 }

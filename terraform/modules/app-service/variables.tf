@@ -18,8 +18,3 @@ variable "location" {
   type        = string
   description = "The Azure region where all resources in this example should be created"
 }
-
-variable "azure_application_insights_instrumentation_key" {
-  type        = string
-  description = "The Azure Application Insights instrumentation key"
-}
