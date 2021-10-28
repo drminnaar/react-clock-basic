@@ -9,7 +9,9 @@
     "lint:fix": "eslint . --fix",
     "serve": "webpack -d && live-server ./public",
     "serve:dev": "webpack-dev-server --open",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "start:prod": "npm run serve",
+    "start:dev": "npm run serve"
   },
   "repository": {
     "type": "git",
