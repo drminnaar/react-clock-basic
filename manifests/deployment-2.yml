@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "jayaksdemo-4ca2"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "jayaksdemo-4ca2"
+  template:
+    metadata:
+      labels:
+        app: "jayaksdemo-4ca2"
+    spec:
+      containers:
+        - name: "jayaksdemo-4ca2"
+          image: "jayacrdemo.azurecr.io/jayaksdemo"
+          ports:
+          - containerPort: 8080

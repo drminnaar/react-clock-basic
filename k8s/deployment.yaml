@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-clock-basic
+spec:
+  selector:
+      matchLabels:
+        app: react-clock-basic
+  replicas: 3
+  template:
+      metadata:
+        labels:
+            app: react-clock-basic
+      spec:
+        containers:
+        - name: react-clock-basic
+          image: <>.azurecr.io/react-clock-basic:v1
+          imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"

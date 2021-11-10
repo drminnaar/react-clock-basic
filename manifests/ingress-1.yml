@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "jayaks2-c927"
+    labels:
+        app: "jayaks2-c927"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: jayaks210cf-jayaks2-c927.86b44fad5c574b39b67a.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "jayaks2-c927"
+                servicePort: 8080
